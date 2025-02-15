@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityWise Traffic Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+<script>
+  let map, marker;
+
+function initMap() {
+  const mapCenter = { lat: 40.7128, lng: -74.0060 };
+
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: mapCenter,
+  });
+
+  const trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+
+  marker = new google.maps.Marker({
+    position: mapCenter,
+    map: map,
+    title: "Your Location",
+  });
+
+  updateLocation();
+}
+
+function updateLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const currentLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        marker.setPosition(currentLocation);
+        map.setCenter(currentLocation);
+      },
+      (error) => {
+        console.error("Error fetching location:", error.message);
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+window.onload = initMap;
+</script>
+
+<!-- Load the Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNVvlmr9F7bibBC3TYXdQQ8letC2Ezvx8&callback=initMap" async defer></script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CityWise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Traffic</a></li>
+            <li class="nav-item"><a class="nav-link" href="waste.html">Waste Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="btn btn-primary bg-primary text-light nav-link py-1 px-3" href="login.html" role="button">Log In</a></li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-light text-center py-5">
+    <h1>Traffic Management Dashboard</h1>
+    <p>Real-Time Traffic Insights & Dynamic Traffic Lights</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <!-- Traffic Map Section -->
+ 
+        <section id="google-map" class="mb-5">
+          <h2 class="mb-4">Live Traffic Map</h2>
+          <div id="map" style="width: 100%; height: 500px;"></div>
+        </section>
+        
+     
+
+    <!-- Traffic Light Status -->
+    <section id="traffic-lights" class="mb-5">
+      <h2 class="mb-4">Dynamic Traffic Lights</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="light-box bg-info text-light p-4 rounded">
+            <h3>No Traffic</h3>
+            <p>Blue Light</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="light-box bg-warning text-dark p-4 rounded">
+            <h3>Light Traffic</h3>
+            <p>Orange Light</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="light-box text-light p-4 rounded" style="background-color: #75163f;">
+            <h3>High Congestion</h3>
+            <p>Magenta Light</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <img src="../images/finalTraffic.png" alt="Traffic Lights Image" class="img-fluid rounded" style="height:400px;">
+      </div>
+      <div class="text-center mt-4">
+        <img src="../images/trafficWorking.jpg" alt="Traffic Lights Image" class="img-fluid rounded" style="height:400px;">
+      </div>
+    </section>
+
+    <!-- Traffic Data Insights -->
+    <section id="charts">
+      <h2 class="mb-4">Traffic Data Insights</h2>
+      <div>
+        <p><a href="https://github.com/Vanshika1021/ML_Katalyst/blob/master/Traffic_Congestion.ipynb" target="_blank" style="text-decoration: none;">Github - Traffic Congestion </a></p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <canvas id="trafficVolumeChart"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="congestionChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 CityWise. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="traffic.js"></script>
+</body>
+</html>

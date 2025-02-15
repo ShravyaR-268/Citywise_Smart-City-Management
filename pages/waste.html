@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityWise Waste Management Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CityWise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="traffic.html">Traffic</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Waste Management</a></li>
+                  <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                  <li class="nav-item"><a class="btn btn-primary bg-primary text-light nav-link py-1 px-3" href="login.html" role="button">Log In</a></li>
+              </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-success text-light text-center py-5">
+    <h1>Waste Management Dashboard</h1>
+    <p>Track Waste Collection & Improve Efficiency</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <!-- Dustbin Status Section -->
+    <section id="dustbin-status" class="mb-5">
+      <h2 class="mb-4">Smart Dustbin Status</h2>
+      <div class="row text-center">
+        <div class="col-md-6">
+          <div class="status-box bg-primary text-light p-4 rounded">
+            <h3>Biodegradable Waste</h3>
+            <p>Status: <span id="bio-status">50% Full</span></p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="status-box bg-warning text-dark p-4 rounded">
+            <h3>Non-Biodegradable Waste</h3>
+            <p>Status: <span id="nonbio-status">30% Full</span></p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3 text-muted">* Real-time status updates based on IoT sensors in the dustbins.</p>
+    </section>
+
+    <!-- Waste Notifications -->
+    <section id="notifications" class="mb-5">
+      <h2 class="mb-4">Notifications</h2>
+      <div class="text-center mt-4 ">
+        <img src="../images/dustbin.png" class="wasteImg">
+      </div>
+      <div class="alert alert-danger">
+        <i class="bi bi-exclamation-triangle-fill"></i> Dustbin #3 (Non-Biodegradable) is Full!
+      </div>
+      <div class="alert alert-warning">
+        <i class="bi bi-info-circle-fill"></i> Dustbin #7 (Biodegradable) is nearing capacity.
+      </div>
+    </section>
+
+    <!-- Waste Collection Insights -->
+    <section id="charts">
+      <h2 class="mb-4">Waste Collection Insights</h2>
+      <div>
+        <p><a href="https://github.com/Vanshika1021/ML_Katalyst/blob/master/Waste_Differentiation.ipynb" target="_blank" style="text-decoration: none;">Github - Waste Management</a></p>
+      </div>
+      <div class="text-center mt-4 ">
+        <img src="../images/waste.jpg" class="wasteImg">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <canvas id="wasteSegregationChart"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="collectionTrendsChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 CityWise. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="waste.js"></script>
+</body>
+</html>

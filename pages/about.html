@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CityWise</title>  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CityWise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="traffic.html">Traffic</a></li>
+            <li class="nav-item"><a class="nav-link" href="waste.html">Waste Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="btn btn-primary bg-primary text-light nav-link py-1 px-3" href="login.html" role="button">Log In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-light text-center py-5">
+    <h1>About Us</h1>
+    <p>Empowering Smart Cities for a Sustainable Future</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <!-- Our Mission -->
+    <section id="mission" class="mb-5">
+      <h2 class="mb-4">Our Mission</h2>
+      <p>
+        At CityWise, we are committed to transforming urban living through innovative technologies. 
+        Our mission is to create smart, sustainable, and livable cities by optimizing infrastructure 
+        and minimizing environmental impact.
+      </p>
+      <div class="text-center mt-4">
+        <video autoplay muted loop>
+          <source src="../images/citywise.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="mb-5">
+      <h2 class="mb-4">What We Do</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title text-primary">Traffic Management</h3>
+              <p class="card-text">
+                Using IoT and AI, we manage traffic congestion with dynamic traffic lights 
+                that adapt to real-time road conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title text-success">Waste Management</h3>
+              <p class="card-text">
+                Our IoT-enabled smart dustbins segregate waste and notify municipalities when 
+                bins are full, ensuring timely waste collection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="mb-5">
+      <h2 class="mb-4">Meet the Team</h2>
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <img src="../images/vanshika.jpg" alt="Team Member" class="rounded-circle mb-3" width="200">
+          <h5>Vanshika Tripathi</h5>
+          <p>M.L. Domain</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <img src="../images/sk.jpg" alt="Team Member" class="rounded-circle mb-3" width="200">
+          <h5>Satvinder Kaur</h5>
+          <p>Front-end</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <img src="../images/shreya.jpg" alt="Team Member" class="rounded-circle mb-3" width="200">
+          <h5>Shreya</h5>
+          <p>IOT Domain</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <img src="../images/shravya.jpg" alt="Team Member" class="rounded-circle mb-3" width="200">
+          <h5>Shravya</h5>
+          <p>Front-end</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-5">
+      <h2 class="mb-4">Contact Us</h2>
+      <p>We’d love to hear from you! Feel free to reach out with your queries or suggestions.</p>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Your Email">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 CityWise. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
